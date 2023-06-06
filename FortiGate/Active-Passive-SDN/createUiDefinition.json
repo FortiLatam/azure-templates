@@ -434,7 +434,7 @@
               {
                 "name": "fgtLicenseFlexVMCheck",
                 "type": "Microsoft.Common.CheckBox",
-                "label": "My organisation is using the Flex-VM subscription service.",
+                "label": "My organization is using the Flex-VM subscription service.",
                 "toolTip": "Select this box to enter a Flex-VM token",
                 "visible": "[equals(basics('fortiGateImageSKU'), 'fortinet_fg-vm')]"
               },
@@ -483,7 +483,7 @@
                   "regex": "^[A-Za-z0-9-]{1,64}$",
                   "validationMessage": "Only alphanumeric characters and a dash are allowed, and the value must be 1 to 64 characters."
                 },
-                "visible": "[steps('instance').fgtLicense.fgtLicenseFlexVMCheck]"
+                "visible": "[and(equals(basics('fortiGateImageSKU'), 'fortinet_fg-vm'),and(steps('instance').fgtLicense.fgtLicenseFlexVMCheck)]"
               },
               {
                 "name": "fgtBflexvm",
@@ -496,7 +496,7 @@
                   "regex": "^[A-Za-z0-9-]{1,64}$",
                   "validationMessage": "Only alphanumeric characters and a dash are allowed, and the value must be 1 to 64 characters."
                 },
-                "visible": "[steps('instance').fgtLicense.fgtLicenseFlexVMCheck]"
+                "visible": "[and(equals(basics('fortiGateImageSKU'), 'fortinet_fg-vm'),and(steps('instance').fgtLicense.fgtLicenseFlexVMCheck)]"
               },
               {
                 "name": "fgtLicensePAYGInfo",
